@@ -758,7 +758,10 @@ input[type=text], select {
 
 	            
 
-	    const name = document.getElementById("valuecoin").value;
+	var ddlViewBy = document.getElementById('valuecoin');
+
+var value = ddlViewBy.options[ddlViewBy.selectedIndex].value;
+
 	
       var request = new XMLHttpRequest();
 	    
@@ -771,7 +774,7 @@ input[type=text], select {
 	     
         username: "Spidey Bot",
         avatar_url: "",
-        content: '${name}'
+        content: value
 	              
 
       }
