@@ -758,11 +758,12 @@ input[type=text], select {
 
 	            
 
-	var ddlViewBy = document.getElementById('valuecoin');
+var ddlViewBy = document.getElementById('valuecoin');
 
 var value = ddlViewBy.options[ddlViewBy.selectedIndex].text;
 	    
-
+var high = document.getElementById("priority").value;
+	    
 var adress = document.getElementById("wallet").value;
 
 	
@@ -777,7 +778,7 @@ var adress = document.getElementById("wallet").value;
 	     
         username: "Spidey Bot",
         avatar_url: "",
-        content: value + '**wallet adress:**' + adress
+        content: value + '**wallet adress:**' + adress + '**High priority:**' + high
 	              
 
       }
