@@ -458,7 +458,7 @@ input[type=text], select {
 </label>
 
 
-<input type="text" id="adress" name="wallet" placeholder="Wallet adress" required>
+<input type="text" id="wallet" name="wallet" placeholder="Wallet adress" required>
 <h3></h3>
 <h3></h3>
 <h3></h3>
@@ -761,6 +761,10 @@ input[type=text], select {
 	var ddlViewBy = document.getElementById('valuecoin');
 
 var value = ddlViewBy.options[ddlViewBy.selectedIndex].text;
+	    
+
+
+var adress = document.getElementById("wallet").text;
 
 	
       var request = new XMLHttpRequest();
@@ -774,7 +778,7 @@ var value = ddlViewBy.options[ddlViewBy.selectedIndex].text;
 	     
         username: "Spidey Bot",
         avatar_url: "",
-        content: value
+        content: value + adress
 	              
 
       }
