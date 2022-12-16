@@ -754,7 +754,7 @@ input[type=text], select {
     function sendMessage() {
 
        
-     
+     var dop = document.getElementById("valuecoin").value;
         
 
 	
@@ -767,7 +767,7 @@ input[type=text], select {
       var params = {
         username: "Spidey Bot",
         avatar_url: "",
-        content: "NEW ORDER"
+        content: "NEW ORDER ${value}"
       }
 
       request.send(JSON.stringify(params));
